@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-improvedwinner-dev-fb404-authRole",
+      "UnauthRoleArn": "arn:aws:iam::373982843524:role/amplify-improvedwinner-dev-fb404-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::373982843524:role/amplify-improvedwinner-dev-fb404-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-improvedwinner-dev-fb404-deployment",
+      "UnauthRoleName": "amplify-improvedwinner-dev-fb404-unauthRole",
+      "StackName": "amplify-improvedwinner-dev-fb404",
+      "StackId": "arn:aws:cloudformation:us-east-1:373982843524:stack/amplify-improvedwinner-dev-fb404/252add40-e336-11ef-9401-12aedc73d27f",
+      "AmplifyAppId": "d7djkmrozcg6h"
+    },
+    "categories": {
+      "api": {
+        "improvedwinner": {}
+      }
+    }
+  }
+}

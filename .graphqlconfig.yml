@@ -1,0 +1,12 @@
+projects:
+  improvedwinner:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - queries
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: .
