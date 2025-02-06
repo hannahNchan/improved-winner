@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import {
   Button,
   Card,
@@ -29,7 +29,6 @@ import {
   BsImageFill,
   BsImages,
   BsPencilSquare,
-  BsSendFill,
   BsTagFill,
   BsThreeDots,
 } from 'react-icons/bs'
@@ -41,7 +40,6 @@ import DropzoneFormInput from '../form/DropzoneFormInput'
 import TextFormInput from '../form/TextFormInput'
 import TextAreaFormInput from '../form/TextAreaFormInput'
 import DateFormInput from '../form/DateFormInput';
-import type { Schema } from "../../../amplify/data/resource";
 
 import avatar1 from '@/assets/images/avatar/01.jpg'
 import avatar2 from '@/assets/images/avatar/02.jpg'
@@ -52,24 +50,14 @@ import avatar6 from '@/assets/images/avatar/06.jpg'
 import avatar7 from '@/assets/images/avatar/07.jpg'
 import ChoicesFormInput from '../form/ChoicesFormInput'
 import { Link } from 'react-router-dom'
-import { generateClient } from "aws-amplify/data";
 
-const client = generateClient<Schema>();
 const CreatePostCard = () => {
-  const [postMessages, setPostMessages] = useState<Array<Schema["Todo"]["type"]>>([]);
   const guests = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7];
   const { isTrue: isOpenPhoto, toggle: togglePhotoModel } = useToggle()
   const { isTrue: isOpenVideo, toggle: toggleVideoModel } = useToggle()
   const { isTrue: isOpenEvent, toggle: toggleEvent } = useToggle()
   const { isTrue: isOpenPost, toggle: togglePost } = useToggle()
   const [postMessage, setPostMessage] = useState<string>('')
-
-  useEffect(() => {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setPostMessages([...data.items]),
-    });
-    console.log('-----\n', postMessages);
-  },[]);
 
   const eventFormSchema = yup.object({
     title: yup.string().required('Please enter event title'),
