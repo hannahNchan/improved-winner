@@ -11,7 +11,8 @@ type CommentProps = {
 }
 
 const UserComments = ({ comment, showStats }: CommentProps) => {
-  const { comments, commentsCount, likesCount } = comment
+  const { comments, commentsCount, likesCount } = comment;
+
   return (
     <>
       {showStats && (
